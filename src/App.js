@@ -1,6 +1,8 @@
 import React from "react";
 import logo from './logo.svg';
 import './App.css';
+import './style.css';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,14 +12,14 @@ import {
 import { useHistory } from "react-router-dom";
 
 import FleetList from "./FleetList";
-import CarList from "./CarList";
+import VehicleList from "./VehicleList";
 
 function App() {
   return (
     <Router>
       <Switch>
-          <Route path="/cars/:fleetId">
-            <CarList />
+          <Route path="/fleet-vehicles/:fleetId">
+            <VehicleList />
           </Route>
           <Route path="/">
             <FleetList />
