@@ -1,3 +1,50 @@
+.fleet-page {
+    text-align: center;
+}
+.fleet-list {
+    width: 50%;
+    margin: auto;
+}
 .fleet-item {
-    
+    padding: 20px;
+    border: 1px solid;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+td, th, table {
+    border: 1px solid grey;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+.overlay {
+    background-color: rgba(0,0,0,0.2);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dialog-view {
+    background-color: #fff;
+    height: 50%;
+    width: 50%;
+    margin: auto;
+}
+
+.dialog-header {
+
+}
+
+.dialog-content {
+
 }

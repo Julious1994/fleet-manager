@@ -1,12 +1,12 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import data from "./jsonData";
 import "./style.css";
+import {useUserStore} from "./context";
 
 function FleetList({ ...props }) {
   const history = useHistory();
-  const [fleetList, setFleetList] = React.useState([...data]);
-
+  const {state} = useUserStore();
+  const fleetList = state.fleetList; 
   const redirectCars = (fleetId) => {
     history.push({
       pathname: `/fleet-vehicles/${fleetId}`,
@@ -14,8 +14,9 @@ function FleetList({ ...props }) {
   };
 
   return (
-    <div>
-      <div>
+    <div className="fleet-page">
+      <h1>Fleet Manager Dashboard</h1>
+      <div className="fleet-list">
         {fleetList.map((fleet, i) => (
           <div className="fleet-item" onClick={() => redirectCars(fleet.fleetId)}>{fleet.name}</div>
         ))}
