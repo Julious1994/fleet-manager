@@ -1,0 +1,32 @@
+Methods:
+1. FleetList.js
+
+ 1.1 redirectCars (sorry naming is confusing) : it will redirect to vehicle page with fleetId. Here it will use react-router's history.push mehtod.
+
+2. VehicleList.js
+  
+  2.1 handleDelete : It will delete vehicle from list. Also uses confirm dialog in it before delete.
+
+  2.2 handleChange : It will used to open location update popup to change location of particular vehicle.
+
+  2.3 handleAdd: It will open popup dialog box to show new vehicle info form to add new vehicle.
+
+  2.4 handleClose: It will used to close popup dialog box and clear data.
+
+  2.5 handleSave: It will add new vehicle info in to particular fleet's vehicle list or update existing vehicle for location change.
+
+  2.6   handleFieldChange: This will used to set vehicle values on change location time or when we add new record, related to input's onchange Methods.
+
+3. context.js
+  
+  3.1 setVehicles: It will update vehicle list of given fleetId.
+
+  3.2 useUserStore: It will return context props which are provided in value. 
+      ex. we set const 
+      value = {
+            state,
+            setVehicles,
+        };
+    we will get above things when we call useUserStore() function in any file under provider. 
+    Check App.js file where we used Provider and then in any file we need context methods & data we can import this method there and simply call it to get things.
+     

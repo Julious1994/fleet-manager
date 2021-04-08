@@ -41,12 +41,12 @@ function VehicleList({ ...props }) {
 
   const handleAdd = React.useCallback(() => {
     setDialog(true);
-    setVehicle({});
+    setVehicle({status: 'available'});
     setVehicleIndex();
   }, []);
 
   const handleClose = React.useCallback(() => {
-    setVehicle({});
+    setVehicle({status: 'available'});
     setVehicleIndex();
     setDialog(false);
   }, []);

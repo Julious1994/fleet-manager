@@ -6,6 +6,7 @@ const FleetContext = React.createContext();
 function FleetProvider({ children }) {
   const [state, setState] = useState({
     fleetList: [...data],
+    nextId: data.length,
   });
 
   const setVehicles = React.useCallback(
@@ -17,15 +18,21 @@ function FleetProvider({ children }) {
       console.log(index);
       if (index !== -1) {
         list[index] = { ...list[index], vehicles };
-        setState({ fleetList: list });
+        setState({ ...state, fleetList: list });
       }
     },
-    [state.fleetList]
+    [state]
   );
+
+  const createFleet = React.useCallback((fleet) => {
+    const id = state.nextId
+    setState({nextId: id + 1, fleetList: [...state.fleetList, {fleetId: id, ...fleet, vehicles: []}]})
+  }, [state]);
 
   const value = {
     state,
     setVehicles,
+    createFleet
   };
 
   return (
